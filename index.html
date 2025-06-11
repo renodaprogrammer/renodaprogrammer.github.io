@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Renogade Farn Portfolio</title>
   <style>
-    /* Variables */
     :root {
-      --highlight: #39ff14; /* neon green */
+      --highlight: #39ff14;
       --bg-dark: #0a0a1a;
       --bg-mid: #141429;
       --bg-header: #0d0d22;
       --card-bg: rgba(0, 255, 20, 0.07);
       --text-light: #c0f7c0;
-      --font-sci-fi: 'Russo One', 'Orbitron', 'Audiowide', sans-serif;
+      --font-sci-fi: 'Orbitron', 'Russo One', 'Audiowide', sans-serif;
     }
 
-    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Russo+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -27,8 +26,6 @@
       font-family: var(--font-sci-fi);
       background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
       color: var(--text-light);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     header {
@@ -39,8 +36,7 @@
       font-weight: 700;
       font-size: 3rem;
       letter-spacing: 0.1em;
-      /* Removed text-shadow (glow) */
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 4px 16px rgba(0,255,20,0.4);
       animation: fadeIn 1s ease forwards;
     }
 
@@ -49,7 +45,6 @@
       font-size: 1.3rem;
       margin-top: 8px;
       color: var(--highlight);
-      /* Removed text-shadow (glow) */
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 0.3s;
     }
@@ -60,7 +55,7 @@
       gap: 30px;
       background: #0f1f0f;
       padding: 15px;
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 4px 10px rgba(0,255,20,0.3);
       animation: fadeIn 1.7s ease forwards;
       flex-wrap: wrap;
     }
@@ -84,7 +79,7 @@
       padding: 40px;
       max-width: 1000px;
       border-radius: 16px;
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 0 24px var(--highlight);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 0.8s ease forwards;
@@ -103,7 +98,7 @@
       font-size: 2rem;
       letter-spacing: 0.08em;
       margin-top: 0;
-      /* Removed text-shadow (glow) */
+      text-shadow: 3px 3px 0px #000;
     }
 
     .projects {
@@ -113,26 +108,23 @@
       justify-content: center;
     }
 
-    /* Container for each gif with static preview */
     .gif-container {
       position: relative;
       width: 100%;
       max-width: 400px;
       border-radius: 12px;
       overflow: hidden;
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 0 14px var(--highlight);
       cursor: pointer;
       background: black;
     }
 
-    /* Static first frame (PNG or GIF with first frame) */
     .gif-container img.static {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    /* Animated gif hidden by default */
     .gif-container img.animated {
       position: absolute;
       top: 0; left: 0;
@@ -142,7 +134,6 @@
       object-fit: cover;
     }
 
-    /* Show animated gif on hover */
     .gif-container:hover img.static {
       display: none;
     }
@@ -175,13 +166,13 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       transition: background 0.3s ease;
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 0 12px var(--highlight);
       user-select: none;
     }
 
     .resume-btn:hover {
       background: #aaffaa;
-      /* Removed box-shadow (glow) */
+      box-shadow: 0 0 18px #aaffaa;
     }
 
     ul {
@@ -191,7 +182,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       0% {opacity: 0;}
       100% {opacity: 1;}
@@ -202,7 +192,6 @@
       100% {opacity: 1; transform: translateY(0);}
     }
 
-    /* Responsive */
     @media (max-width: 700px) {
       nav {
         gap: 15px;
@@ -251,11 +240,11 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="gif-container" tabindex="0" aria-label="Gameplay animation 1">
-        <img src="assets/gameplay1.png" alt="Gameplay preview frame 1" class="static" />
+        <img src="assets/gameplay1.png" alt="Gameplay preview 1" class="static" />
         <img src="assets/gameplay1.gif" alt="Gameplay animation 1" class="animated" />
       </div>
       <div class="gif-container" tabindex="0" aria-label="Gameplay animation 2">
-        <img src="assets/gameplay1.png" alt="Gameplay preview frame 2" class="static" />
+        <img src="assets/gameplay1.png" alt="Gameplay preview 2" class="static" />
         <img src="assets/gameplay1.gif" alt="Gameplay animation 2" class="animated" />
       </div>
     </div>
@@ -273,22 +262,22 @@
     <h2>Experience</h2>
     <h3>Inventure I.T. – Spring 2023 to Present</h3>
     <ul>
-      <li>Developed and maintained web applications using ASP.NET Core, C#, SQL, HTML, CSS, and JavaScript</li>
-      <li>Utilized Azure DevOps for task management and deployments</li>
-      <li>Full-stack development support for clients</li>
+      <li>Developed and maintained web apps using ASP.NET Core, C#, SQL, HTML, CSS, and JavaScript</li>
+      <li>Used Azure DevOps for project management and deployment</li>
+      <li>Full-stack dev work for clients</li>
     </ul>
 
     <h3>Tupelo Labs – Gameplay Programmer</h3>
     <ul>
-      <li>Developed Unity games in a small team</li>
-      <li>Managed interns and coordinated tasks</li>
-      <li><strong>Demon Wars: Commodores Command</strong> – Lead Gameplay Programmer for a VR/AR tabletop game using Unity, Meta SDK, and Netcode for GameObjects</li>
+      <li>Worked on Unity games in a small team</li>
+      <li>Managed interns, handled game design and implementation</li>
+      <li><strong>Demon Wars: Commodores Command</strong> – Lead gameplay programmer (Unity, Meta SDK, Netcode, NavMesh)</li>
     </ul>
 
     <h3>S.A.L.T. – Assistant Lead Apprentice</h3>
     <ul>
-      <li>Built fully integrated websites using ASP.NET Core and Microsoft SQL Server</li>
-      <li>Led a team of apprentices and collaborated on frontend/backend development</li>
+      <li>Developed websites using ASP.NET Core and Microsoft SQL Server</li>
+      <li>Led a team of apprentices</li>
     </ul>
   </section>
 

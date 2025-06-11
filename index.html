@@ -4,20 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Renogade Farn Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --highlight: #8cd1ff;
+      --bg-dark: #1e1e2f;
+      --bg-mid: #2e2e40;
+      --bg-header: #11162d;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(120deg, #1e1e2f, #2e2e40);
+      background: linear-gradient(120deg, var(--bg-dark), var(--bg-mid));
       color: #f0f0f0;
     }
 
     header {
-      background: #11162d;
-      color: #8cd1ff;
+      background: var(--bg-header);
+      color: var(--highlight);
       padding: 40px 20px;
       text-align: center;
+      font-family: 'Press Start 2P', cursive;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease-in-out forwards;
     }
 
     nav {
@@ -27,13 +42,15 @@
       background: #272744;
       padding: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
 
     nav a {
-      color: #aad5ff;
+      color: var(--highlight);
       text-decoration: none;
-      font-size: 18px;
+      font-size: 16px;
       transition: color 0.3s ease;
+      font-family: 'Press Start 2P', cursive;
     }
 
     nav a:hover {
@@ -41,18 +58,29 @@
     }
 
     section {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: var(--card-bg);
       margin: 40px auto;
       padding: 40px;
       max-width: 1000px;
       border-radius: 16px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease-in-out forwards;
     }
 
+    section:nth-of-type(2) { animation-delay: 0.3s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.9s; }
+    section:nth-of-type(5) { animation-delay: 1.2s; }
+    section:nth-of-type(6) { animation-delay: 1.5s; }
+
     h2 {
-      color: #8cd1ff;
-      border-bottom: 2px solid #8cd1ff;
+      color: var(--highlight);
+      border-bottom: 2px solid var(--highlight);
       padding-bottom: 8px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
     }
 
     .projects {
@@ -71,26 +99,28 @@
 
     .projects img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px #8cd1ff;
+      box-shadow: 0 0 15px var(--highlight);
     }
 
     footer {
-      background: #11162d;
+      background: var(--bg-header);
       color: #bbb;
       text-align: center;
       padding: 20px;
       font-size: 14px;
+      font-family: 'Press Start 2P', cursive;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     a {
-      color: #aad5ff;
+      color: var(--highlight);
     }
 
     .resume-btn {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
-      background: #8cd1ff;
+      background: var(--highlight);
       color: #111;
       border-radius: 8px;
       text-decoration: none;
@@ -104,6 +134,17 @@
 
     ul {
       padding-left: 1.2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>

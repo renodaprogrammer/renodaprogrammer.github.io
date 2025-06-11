@@ -1,180 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Renogade Farn - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renogade Farn Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background: #f9f9f9; }
-        header { background: #333; color: white; text-align: center; padding: 20px; }
-        nav { display: flex; justify-content: center; gap: 20px; background: #444; padding: 10px; }
-        nav a { color: white; text-decoration: none; font-size: 18px; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 40px 20px; max-width: 900px; margin: auto; background: white; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
-        h1, h2 { margin-top: 0; }
-        .projects img { width: 100%; max-width: 400px; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; }
-        button.resume-btn {
-            background-color: #0066cc;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #333;
             color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            text-align: center;
+            padding: 20px;
         }
-        button.resume-btn:hover {
-            background-color: #004999;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #444;
+            padding: 10px;
         }
-        ul { list-style-type: disc; padding-left: 20px; }
-        .work-item, .education-item, .publication-item, .reference-item {
-            margin-bottom: 15px;
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
         }
-        .work-title {
-            font-weight: bold;
-            font-size: 1.1em;
+
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
-        .work-dates {
-            font-style: italic;
-            color: #666;
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-        .section-subtitle {
-            font-weight: bold;
-            margin-top: 8px;
+
+        .project-hover {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
         }
-        a { color: #0066cc; }
+
+        .project-hover img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .project-hover .gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .project-hover:hover .preview {
+            display: none;
+        }
+
+        .project-hover:hover .gif {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Renogade Farn</h1>
+        <p>Web Developer | Unity Game Dev</p>
+    </header>
 
-<header>
-    <h1>Renogade Farn</h1>
-    <p>Gameplay Programmer in Unity and Unreal Engine</p>
-    <a href="Resume.pdf" download>
-        <button class="resume-btn">Download Resume</button>
-    </a>
-</header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="Resume.pdf" target="_blank">Resume</a>
+    </nav>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#work">Work Experience</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a game developer with a focus on gameplay programming in Unity and Unreal Engine 5.</p>
+    </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>I'm a game developer with a focus on gameplay programming in Unity and Unreal 5.</p>
-</section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-hover">
+                <img src="assets/gameplay1.png" class="preview" alt="Project 1 Preview">
+                <img src="assets/gameplay1.gif" class="gif" alt="Project 1 Gameplay">
+            </div>
+            <div class="project-hover">
+                <img src="assets/gameplay1.png" class="preview" alt="Project 1 Preview Duplicate">
+                <img src="assets/gameplay1.gif" class="gif" alt="Project 1 Gameplay Duplicate">
+            </div>
+        </div>
+    </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li><strong>Programming Languages:</strong> C#, C++, Java, JavaScript, CSS, HTML, SQL, R</li>
-        <li><strong>Game Engines:</strong> Unity Engine, Unreal Engine</li>
-        <li><strong>Tools & Frameworks:</strong> Blender</li>
-    </ul>
-</section>
+    <section id="skills">
+        <h2>Skills & Tools</h2>
+        <p><strong>Languages:</strong> C#, C++, Java, JavaScript, CSS, HTML, SQL, R</p>
+        <p><strong>Tools & Engines:</strong> Unity Engine, Unreal Engine, Blender</p>
+    </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-        <img src="assets/gameplay1.gif" alt="Gameplay GIF">
-        <p>Project 1 - Description</p>
-        <img src="assets/gameplay1.gif" alt="Gameplay GIF">
-        <p>Project 2 - Description</p>
-    </div>
-</section>
+    <section id="experience">
+        <h2>Education</h2>
+        <ul>
+            <li>Bachelors of Mathematics - Georgia Southern University, Statesboro, GA</li>
+            <li>Bachelors of Computer Science - Georgia Southern University, Statesboro, GA</li>
+            <li>Associate of Science – Mathematics - South Georgia State College, Douglas, GA</li>
+        </ul>
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="education-item">
-        <p>Bachelor of Mathematics - Georgia Southern University, Statesboro, GA</p>
-    </div>
-    <div class="education-item">
-        <p>Bachelor of Computer Science - Georgia Southern University, Statesboro, GA</p>
-    </div>
-    <div class="education-item">
-        <p>Associate of Science – Mathematics - South Georgia State College, Douglas, GA</p>
-    </div>
-</section>
-
-<section id="work">
-    <h2>Work Experience</h2>
-
-    <div class="work-item">
-        <p class="work-title">Inventure I.T. - Statesboro, GA</p>
-        <p class="work-dates">Spring 2023 - Current</p>
+        <h2>Work Experience</h2>
+        <h3>Inventure I.T. - Statesboro, GA (Spring 2023 - Current)</h3>
         <ul>
             <li>Developed and maintained web applications using ASP.NET Core, C#, SQL, HTML, CSS, and JavaScript</li>
-            <li>Worked with Azure DevOps for task management and deployments</li>
-            <li>Built, updated, and provided support for client web applications from front to back end</li>
+            <li>Used Azure DevOps for task management and deployments</li>
+            <li>Handled both front-end and back-end support for client web applications</li>
         </ul>
-    </div>
 
-    <div class="work-item">
-        <p class="work-title">Tupelo Labs – Gameplay Programmer</p>
+        <h3>Tupelo Labs – Gameplay Programmer</h3>
         <ul>
-            <li>Worked on a team developing small scale Unity games</li>
-            <li>Managed interns and facilitated instructions and planning</li>
-            <li><strong>Demon Wars: Commodores Command</strong>: Primary gameplay programmer for this virtual and mixed reality tabletop game</li>
-            <li><strong>Technologies:</strong> Unity3D, Meta Interaction SDK, Netcode for Game Objects, Unity Navmesh for AI, Meta Quest 2 & 3, Unity Version Control, Trello</li>
+            <li>Worked in a team to develop small-scale Unity games</li>
+            <li>Managed interns and facilitated planning and instructions</li>
+            <li><strong>Demon Wars: Commodores Command</strong> – Lead gameplay programmer</li>
+            <li>Tech used: Unity3D, Meta Interaction SDK, Netcode for GameObjects, Unity Navmesh, Quest 2 & 3, Hand/Controller interactions, Trello</li>
         </ul>
-    </div>
 
-    <div class="work-item">
-        <p class="work-title">S.A.L.T. Apprentice Assistant Lead</p>
+        <h3>S.A.L.T. Apprentice Assistant Lead</h3>
         <ul>
-            <li>Worked on a fully integrated website using ASP.NET Core and Microsoft Server with T-SQL</li>
-            <li>Used Azure DevOps for development and deployments</li>
-            <li>Led and assisted a team of apprentices and developers</li>
-            <li>Developed front-end with HTML, JavaScript, and CSS</li>
-            <li>Worked on back-end C# linked to an SQL database</li>
+            <li>Worked on fully integrated client websites using ASP.NET CORE and Microsoft SQL Server</li>
+            <li>Led and collaborated with a team of apprentices and developers</li>
+            <li>Used Azure DevOps, HTML, JavaScript, CSS, and C#</li>
         </ul>
-    </div>
-</section>
 
-<section id="publications">
-    <h2>Publications & Presentations</h2>
-    <div class="publication-item">
-        <p>2nd Place in Computing, ALLEN E. PAULSON COLLEGE OF ENGINEERING AND COMPUTING INDUSTRY EXPO 2023</p>
-        <p>Warner Robins - Unity Augmented Reality Experience</p>
-    </div>
-</section>
+        <h2>Publications & Presentations</h2>
+        <ul>
+            <li>2nd Place in Computing – Allen E. Paulson College of Engineering and Computing Industry Expo 2023</li>
+            <li>Warner Robins Unity Augmented Reality Experience</li>
+        </ul>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank" rel="noopener noreferrer">Renogade Farn</a></p>
-</section>
+        <h2>References</h2>
+        <ul>
+            <li>Skyler Reep – Tupelo Labs Founder – (843) 333-4693</li>
+            <li>Wallace Norman – Software Developer, Anagen Systems – (770) 667-4800</li>
+            <li>Andrew Williams – S.T.E.M. Coordinator, SGSC – (912) 260-4349</li>
+            <li>Travis Wehmeier – Instructor of Mathematics, SGSC – (912) 260-4350</li>
+            <li>Kishore Pradhan – Assistant Professor of Mathematics, SGSC – (912) 260-4434</li>
+        </ul>
+    </section>
 
-<section id="references">
-    <h2>References</h2>
-    <div class="reference-item">
-        <p>Skyler Reep - Tupelo Labs Founder - (843) 333-4693</p>
-    </div>
-    <div class="reference-item">
-        <p>Wallace Norman - Software Developer - Anagen Systems - (770) 667-4800</p>
-    </div>
-    <div class="reference-item">
-        <p>Andrew Williams - S.T.E.M. Center Coordinator - SGSC, Douglas Campus - (912) 260-4349</p>
-    </div>
-    <div class="reference-item">
-        <p>Travis Wehmeier - Instructor of Mathematics - SGSC, Douglas Campus - (912) 260-4350</p>
-    </div>
-    <div class="reference-item">
-        <p>Kishore Pradhan - Assis. Professor of Mathematics - SGSC, Douglas Campus - (912) 260-4434</p>
-    </div>
-</section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank">Renogade Farn</a></p>
+    </section>
 
-<footer>
-    <p>© 2025 Renogade Farn. All Rights Reserved.</p>
-</footer>
-
+    <footer>
+        <p>© 2025 Renogade Farn. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

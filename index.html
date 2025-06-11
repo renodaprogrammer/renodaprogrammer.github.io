@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Renogade Farn Portfolio</title>
   <style>
+    /* Variables */
     :root {
       --highlight: #39ff14; /* neon green */
-      --bg-dark: #1e1e2f;
-      --bg-mid: #2e2e40;
-      --bg-header: #11162d;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --text-light: #d9f0d9;
+      --bg-dark: #0a0a1a;
+      --bg-mid: #141429;
+      --bg-header: #0d0d22;
+      --card-bg: rgba(0, 255, 20, 0.07);
+      --text-light: #c0f7c0;
+      --font-sci-fi: 'Orbitron', 'Russo One', 'Audiowide', sans-serif;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -20,9 +24,11 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(120deg, var(--bg-dark), var(--bg-mid));
+      font-family: var(--font-sci-fi);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
       color: var(--text-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     header {
@@ -30,17 +36,20 @@
       color: var(--highlight);
       padding: 40px 20px;
       text-align: center;
-      font-weight: bold;
-      font-size: 2.4rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 12px var(--highlight);
+      box-shadow: 0 4px 16px rgba(0,255,20,0.4);
       animation: fadeIn 1s ease forwards;
     }
 
     header p {
-      font-weight: normal;
-      font-size: 1.2rem;
-      margin-top: 6px;
+      font-weight: 400;
+      font-size: 1.3rem;
+      margin-top: 8px;
       color: var(--highlight);
+      text-shadow: 0 0 8px var(--highlight);
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 0.3s;
     }
@@ -49,18 +58,20 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      background: #223322;
+      background: #0f1f0f;
       padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,255,20,0.3);
       animation: fadeIn 1.7s ease forwards;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: var(--highlight);
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 1.1rem;
+      font-weight: 600;
       transition: color 0.3s ease;
+      letter-spacing: 0.05em;
     }
 
     nav a:hover {
@@ -73,7 +84,7 @@
       padding: 40px;
       max-width: 1000px;
       border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 0 24px var(--highlight);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 0.8s ease forwards;
@@ -89,28 +100,54 @@
       color: var(--highlight);
       border-bottom: 2px solid var(--highlight);
       padding-bottom: 8px;
-      font-size: 22px;
+      font-size: 2rem;
+      letter-spacing: 0.08em;
       margin-top: 0;
+      text-shadow: 0 0 10px var(--highlight);
     }
 
     .projects {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
     }
 
-    .projects img {
+    /* Container for each gif with static preview */
+    .gif-container {
+      position: relative;
       width: 100%;
       max-width: 400px;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 14px var(--highlight);
       cursor: pointer;
+      background: black;
     }
 
-    .projects img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px var(--highlight);
+    /* Static first frame (PNG or GIF with first frame) */
+    .gif-container img.static {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Animated gif hidden by default */
+    .gif-container img.animated {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    /* Show animated gif on hover */
+    .gif-container:hover img.static {
+      display: none;
+    }
+    .gif-container:hover img.animated {
+      display: block;
     }
 
     footer {
@@ -120,6 +157,7 @@
       padding: 20px;
       font-size: 14px;
       animation: fadeIn 2s ease forwards;
+      letter-spacing: 0.05em;
     }
 
     a {
@@ -129,33 +167,63 @@
     .resume-btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 20px;
+      padding: 12px 28px;
       background: var(--highlight);
       color: #111;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       transition: background 0.3s ease;
+      box-shadow: 0 0 12px var(--highlight);
+      user-select: none;
     }
 
     .resume-btn:hover {
       background: #aaffaa;
+      box-shadow: 0 0 18px #aaffaa;
     }
 
     ul {
-      padding-left: 1.2rem;
-      line-height: 1.5;
+      padding-left: 1.4rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
     }
 
     /* Animations */
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      0% {opacity: 0;}
+      100% {opacity: 1;}
     }
 
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      nav {
+        gap: 15px;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+      section {
+        padding: 25px 20px;
+        margin: 30px 10px;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gif-container {
+        max-width: 90vw;
+      }
     }
   </style>
 </head>
@@ -182,8 +250,14 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-      <img src="assets/gameplay1.gif" alt="Gameplay GIF 1" />
-      <img src="assets/gameplay1.gif" alt="Gameplay GIF 2" />
+      <div class="gif-container" tabindex="0" aria-label="Gameplay animation 1">
+        <img src="assets/gameplay1-firstframe.png" alt="Gameplay preview frame 1" class="static" />
+        <img src="assets/gameplay1.gif" alt="Gameplay animation 1" class="animated" />
+      </div>
+      <div class="gif-container" tabindex="0" aria-label="Gameplay animation 2">
+        <img src="assets/gameplay1-firstframe.png" alt="Gameplay preview frame 2" class="static" />
+        <img src="assets/gameplay1.gif" alt="Gameplay animation 2" class="animated" />
+      </div>
     </div>
   </section>
 

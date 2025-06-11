@@ -1,190 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renogade Farn Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renogade Farn | Game Dev Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+    :root {
+      --bg-dark: #0d0d0d;
+      --bg-light: #1f1f1f;
+      --primary: #00ffc3;
+      --accent: #ff005e;
+      --text: #f0f0f0;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            background: #444;
-            padding: 10px;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    body {
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg-dark);
+      color: var(--text);
+    }
 
-        section {
-            padding: 40px;
-            max-width: 1000px;
-            margin: auto;
-            background: white;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      background-color: var(--bg-light);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+    }
 
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
 
-        .project-hover {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-        }
+    header p {
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
 
-        .project-hover img {
-            width: 100%;
-            display: block;
-            border-radius: 8px;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #111;
+      padding: 1rem;
+      gap: 1rem;
+    }
 
-        .project-hover .gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: none;
-        }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
 
-        .project-hover:hover .preview {
-            display: none;
-        }
+    nav a:hover {
+      background: var(--primary);
+      color: var(--bg-dark);
+    }
 
-        .project-hover:hover .gif {
-            display: block;
-        }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
+    h2 {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
 
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
-    </style>
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-hover {
+      position: relative;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #111;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .project-hover img {
+      display: block;
+      width: 100%;
+    }
+
+    .project-hover .gif {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+
+    .project-hover:hover .preview {
+      display: none;
+    }
+
+    .project-hover:hover .gif {
+      display: block;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid var(--primary);
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Renogade Farn</h1>
-        <p>Web Developer | Unity Game Dev</p>
-    </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a href="Resume.pdf" target="_blank">Resume</a>
-    </nav>
+<header>
+  <h1>Renogade Farn</h1>
+  <p>Web Developer | Unity Game Dev</p>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a game developer with a focus on gameplay programming in Unity and Unreal Engine 5.</p>
-    </section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+  <a href="Resume.pdf" target="_blank">Resume</a>
+</nav>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project-hover">
-                <img src="assets/gameplay1.png" class="preview" alt="Project 1 Preview">
-                <img src="assets/gameplay1.gif" class="gif" alt="Project 1 Gameplay">
-            </div>
-            <div class="project-hover">
-                <img src="assets/gameplay1.png" class="preview" alt="Project 1 Preview Duplicate">
-                <img src="assets/gameplay1.gif" class="gif" alt="Project 1 Gameplay Duplicate">
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm a game developer with a focus on gameplay programming in Unity and Unreal Engine 5. I love building immersive, interactive systems and working in collaborative environments.</p>
+</section>
 
-    <section id="skills">
-        <h2>Skills & Tools</h2>
-        <p><strong>Languages:</strong> C#, C++, Java, JavaScript, CSS, HTML, SQL, R</p>
-        <p><strong>Tools & Engines:</strong> Unity Engine, Unreal Engine, Blender</p>
-    </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-hover">
+      <img src="assets/gameplay1.png" class="preview" alt="Project Preview">
+      <img src="assets/gameplay1.gif" class="gif" alt="Project Animation">
+    </div>
+    <div class="project-hover">
+      <img src="assets/gameplay1.png" class="preview" alt="Project Preview 2">
+      <img src="assets/gameplay1.gif" class="gif" alt="Project Animation 2">
+    </div>
+  </div>
+</section>
 
-    <section id="experience">
-        <h2>Education</h2>
-        <ul>
-            <li>Bachelors of Mathematics - Georgia Southern University, Statesboro, GA</li>
-            <li>Bachelors of Computer Science - Georgia Southern University, Statesboro, GA</li>
-            <li>Associate of Science – Mathematics - South Georgia State College, Douglas, GA</li>
-        </ul>
+<section id="skills">
+  <h2>Skills & Tools</h2>
+  <p><strong>Languages:</strong> C#, C++, Java, JavaScript, CSS, HTML, SQL, R</p>
+  <p><strong>Engines:</strong> Unity, Unreal Engine</p>
+  <p><strong>Other Tools:</strong> Blender, Trello, Azure DevOps, Git</p>
+</section>
 
-        <h2>Work Experience</h2>
-        <h3>Inventure I.T. - Statesboro, GA (Spring 2023 - Current)</h3>
-        <ul>
-            <li>Developed and maintained web applications using ASP.NET Core, C#, SQL, HTML, CSS, and JavaScript</li>
-            <li>Used Azure DevOps for task management and deployments</li>
-            <li>Handled both front-end and back-end support for client web applications</li>
-        </ul>
+<section id="experience">
+  <h2>Education</h2>
+  <ul>
+    <li>B.S. Mathematics – Georgia Southern University</li>
+    <li>B.S. Computer Science – Georgia Southern University</li>
+    <li>A.S. Mathematics – South Georgia State College</li>
+  </ul>
 
-        <h3>Tupelo Labs – Gameplay Programmer</h3>
-        <ul>
-            <li>Worked in a team to develop small-scale Unity games</li>
-            <li>Managed interns and facilitated planning and instructions</li>
-            <li><strong>Demon Wars: Commodores Command</strong> – Lead gameplay programmer</li>
-            <li>Tech used: Unity3D, Meta Interaction SDK, Netcode for GameObjects, Unity Navmesh, Quest 2 & 3, Hand/Controller interactions, Trello</li>
-        </ul>
+  <h2>Work Experience</h2>
+  <h3>Inventure I.T. – Web Developer</h3>
+  <ul>
+    <li>ASP.NET Core, C#, SQL, HTML/CSS/JavaScript</li>
+    <li>Task management and deployments with Azure DevOps</li>
+    <li>Front-to-back development and client support</li>
+  </ul>
 
-        <h3>S.A.L.T. Apprentice Assistant Lead</h3>
-        <ul>
-            <li>Worked on fully integrated client websites using ASP.NET CORE and Microsoft SQL Server</li>
-            <li>Led and collaborated with a team of apprentices and developers</li>
-            <li>Used Azure DevOps, HTML, JavaScript, CSS, and C#</li>
-        </ul>
+  <h3>Tupelo Labs – Gameplay Programmer</h3>
+  <ul>
+    <li>Primary gameplay programmer for "Demon Wars: Commodores Command"</li>
+    <li>Worked with Unity3D, Meta SDK, Netcode for GameObjects</li>
+    <li>Led intern development and implemented VR gameplay logic</li>
+  </ul>
 
-        <h2>Publications & Presentations</h2>
-        <ul>
-            <li>2nd Place in Computing – Allen E. Paulson College of Engineering and Computing Industry Expo 2023</li>
-            <li>Warner Robins Unity Augmented Reality Experience</li>
-        </ul>
+  <h3>S.A.L.T. Apprentice Assistant Lead</h3>
+  <ul>
+    <li>ASP.NET Core framework with SQL backend</li>
+    <li>Front-end design and team coordination</li>
+  </ul>
 
-        <h2>References</h2>
-        <ul>
-            <li>Skyler Reep – Tupelo Labs Founder – (843) 333-4693</li>
-            <li>Wallace Norman – Software Developer, Anagen Systems – (770) 667-4800</li>
-            <li>Andrew Williams – S.T.E.M. Coordinator, SGSC – (912) 260-4349</li>
-            <li>Travis Wehmeier – Instructor of Mathematics, SGSC – (912) 260-4350</li>
-            <li>Kishore Pradhan – Assistant Professor of Mathematics, SGSC – (912) 260-4434</li>
-        </ul>
-    </section>
+  <h2>Honors & Publications</h2>
+  <ul>
+    <li>2nd Place, Allen E. Paulson Computing Expo 2023</li>
+    <li>AR Experience – Warner Robins Project</li>
+  </ul>
+</section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank">Renogade Farn</a></p>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank">/renogade-farn</a></p>
+</section>
 
-    <footer>
-        <p>© 2025 Renogade Farn. All Rights Reserved.</p>
-    </footer>
+<footer>
+  <p>© 2025 Renogade Farn. Game on.</p>
+</footer>
+
 </body>
 </html>

@@ -6,85 +6,89 @@
   <title>Renogade Farn Portfolio</title>
   <style>
     :root {
-      --primary: #1d3557;
-      --secondary: #457b9d;
-      --accent: #a8dadc;
-      --text: #f1faee;
-      --background: #0b1b2b;
-      --section-bg: #12243b;
-      --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --highlight: #00e0ff;
+      --bg-dark: #050513;
+      --bg-mid: #0c0c2c;
+      --bg-header: #0a0a25;
+      --card-bg: rgba(0, 224, 255, 0.07);
+      --text-light: #d3f9ff;
+      --font-sci-fi: 'Orbitron', 'Audiowide', 'Segoe UI', sans-serif;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: var(--font);
-      background-color: var(--background);
-      color: var(--text);
-      line-height: 1.6;
+      margin: 0;
+      font-family: var(--font-sci-fi);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+      color: var(--text-light);
     }
 
     header {
-      background: var(--primary);
+      background: var(--bg-header);
+      color: var(--highlight);
+      padding: 40px 20px;
       text-align: center;
-      padding: 50px 20px;
-      color: var(--text);
-    }
-
-    header h1 {
       font-size: 2.8rem;
-      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+      box-shadow: 0 4px 16px rgba(0,224,255,0.4);
     }
 
     header p {
-      font-size: 1.2rem;
-      color: var(--accent);
+      font-size: 1.3rem;
+      color: var(--highlight);
+      margin-top: 8px;
     }
 
     nav {
-      background: var(--secondary);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
+      background: #081818;
       padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,224,255,0.3);
     }
 
     nav a {
-      color: var(--text);
+      color: var(--highlight);
       text-decoration: none;
+      font-size: 1.1rem;
       font-weight: 600;
+      letter-spacing: 0.05em;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: #aaffff;
     }
 
     section {
-      background-color: var(--section-bg);
+      background-color: var(--card-bg);
       margin: 40px auto;
       padding: 40px;
-      max-width: 960px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(168, 218, 220, 0.1);
+      max-width: 1000px;
+      border-radius: 16px;
+      box-shadow: 0 0 24px var(--highlight);
     }
 
     h2 {
-      color: var(--accent);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 10px;
+      color: var(--highlight);
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 8px;
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      margin-top: 0;
     }
 
     .projects {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
     }
 
@@ -92,23 +96,25 @@
       position: relative;
       width: 100%;
       max-width: 400px;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 0 14px var(--highlight);
       background: black;
-      box-shadow: 0 0 10px rgba(168, 218, 220, 0.4);
+      cursor: pointer;
     }
 
-    .gif-container img {
+    .gif-container img.static {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
     .gif-container img.animated {
-      display: none;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
       object-fit: cover;
     }
 
@@ -120,50 +126,53 @@
       display: block;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
     .resume-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: var(--accent);
+      margin-top: 10px;
+      padding: 12px 28px;
+      background: var(--highlight);
       color: #000;
+      border-radius: 10px;
+      font-weight: 700;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      letter-spacing: 0.08em;
+      box-shadow: 0 0 12px var(--highlight);
     }
 
     .resume-btn:hover {
-      background: #f1faee;
-      color: #000;
+      background: #aaffff;
+      box-shadow: 0 0 18px #aaffff;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
     footer {
+      background: var(--bg-header);
+      color: #bbb;
       text-align: center;
-      background: var(--primary);
-      color: #ccc;
       padding: 20px;
-      font-size: 0.9rem;
+      font-size: 14px;
+      letter-spacing: 0.05em;
     }
 
     @media (max-width: 700px) {
-      section {
-        padding: 25px 20px;
-        margin: 30px 10px;
-      }
-      nav {
-        gap: 10px;
-      }
+      nav { gap: 15px; }
+      section { padding: 25px 20px; margin: 30px 10px; }
+      h2 { font-size: 1.5rem; }
+      .projects { flex-direction: column; align-items: center; }
+      .gif-container { max-width: 90vw; }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <h1>Renogade Farn</h1>
-    <p>Full-Stack Web Developer | Unity Game Developer</p>
+    Renogade Farn
+    <p>Software Engineer · Game Developer</p>
   </header>
 
   <nav>
@@ -171,26 +180,26 @@
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
-    <a href="#references">References</a>
     <a href="#contact">Contact</a>
+    <a href="#references">References</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm a passionate developer with experience in full-stack web development and game development using Unity and Unreal Engine 5. I specialize in gameplay programming, system design, and interactive experiences.</p>
-    <a href="assets/resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">View Resume</a>
+    <p>I’m a software engineer and gameplay programmer specializing in .NET development and interactive 3D experiences with Unity and Unreal.</p>
+    <a href="assets/Resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">View Resume</a>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-      <div class="gif-container" tabindex="0" aria-label="Gameplay animation 1">
-        <img src="assets/gameplay1.png" alt="Gameplay preview 1" class="static" />
-        <img src="assets/gameplay1.gif" alt="Gameplay animation 1" class="animated" />
+      <div class="gif-container">
+        <img src="assets/gameplay1.png" alt="Gameplay Preview" class="static" />
+        <img src="assets/gameplay1.gif" alt="Gameplay Animation" class="animated" />
       </div>
-      <div class="gif-container" tabindex="0" aria-label="Gameplay animation 2">
-        <img src="assets/gameplay1.png" alt="Gameplay preview 2" class="static" />
-        <img src="assets/gameplay1.gif" alt="Gameplay animation 2" class="animated" />
+      <div class="gif-container">
+        <img src="assets/gameplay2.png" alt="Gameplay Preview 2" class="static" />
+        <img src="assets/gameplay2.gif" alt="Gameplay Animation 2" class="animated" />
       </div>
     </div>
   </section>
@@ -198,48 +207,54 @@
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li><strong>Languages:</strong> C#, C++, Java, JavaScript, CSS, HTML, SQL, R</li>
-      <li><strong>Frameworks/Tools:</strong> ASP.NET Core, Unity, Unreal Engine, Blender</li>
-      <li><strong>Version Control:</strong> Git, Azure DevOps</li>
+      <li><strong>Languages:</strong> C#, C++, Java, JavaScript, HTML, CSS, SQL, R</li>
+      <li><strong>Tools & Frameworks:</strong> Unity, Unreal Engine, ASP.NET Core, Blazor, Azure DevOps, SSRS</li>
+      <li><strong>Design:</strong> UI/UX, Game Design, Agile, VR/MR, 3D Pipelines</li>
     </ul>
   </section>
 
   <section id="experience">
-    <h2>Experience</h2>
+    <h2>Professional Experience</h2>
 
-    <h3>Inventure I.T. – Spring 2023 to Present</h3>
+    <h3>Software Engineer – Inventure I.T.</h3>
+    <p><em>March 2025 – Present · Savannah, GA</em></p>
     <ul>
-      <li>Developed client web apps using ASP.NET Core, C#, and JavaScript</li>
-      <li>Managed full-stack solutions and deployments via Azure DevOps</li>
+      <li>Developed full-stack applications using ASP.NET Core, Blazor, C#, and SQL, including a MAUI Blazor hybrid Point-of-Care app generating $300K+ annual revenue.</li>
+      <li>Enhanced UI with responsive HTML, CSS, and JavaScript, implementing dynamic search, sort, and pagination.</li>
+      <li>Created SSRS reports to automate billing workflows, cutting review time by 50% and reducing support calls by 30%.</li>
+      <li>Managed Agile sprints and CI/CD using Azure DevOps across business-critical systems.</li>
     </ul>
 
-    <h3>Tupelo Labs – Gameplay Programmer</h3>
+    <h3>Gameplay Programmer – Tupelo Labs</h3>
+    <p><em>Jan 2024 – March 2025 · Savannah, GA</em></p>
     <ul>
-      <li>Led Unity gameplay programming for <strong>Demon Wars: Commodore’s Command</strong></li>
-      <li>Worked with Meta SDK, Unity Netcode, and NavMesh</li>
+      <li>Led gameplay development on a VR tabletop strategy title using Unity, Netcode for GameObjects, and Meta Quest SDKs.</li>
+      <li>Implemented NavMesh-based AI, hand tracking, and controller support for Meta Quest 2 & 3.</li>
+      <li>Directed prototyping, sprint planning, and intern mentorship using Trello and Unity’s XR toolkit.</li>
     </ul>
 
-    <h3>S.A.L.T. – Assistant Lead Apprentice</h3>
+    <h3>Software Engineer Intern – S.A.L.T.</h3>
+    <p><em>Jan 2023 – Dec 2023 · Statesboro, GA</em></p>
     <ul>
-      <li>Built internal websites using ASP.NET Core and SQL Server</li>
-      <li>Mentored junior apprentices and led sprint planning</li>
+      <li>Added ASP.NET confirmation dialogs for ticket deletion/restoration in CompleteMD software.</li>
+      <li>Refined SQL stored procedures to remove data duplication in lab reports and reduce downtime.</li>
+      <li>Resolved validation and email expiration bugs to stabilize production behavior.</li>
     </ul>
-  </section>
-
-  <section id="references">
-    <h2>References</h2>
-    <p>References available upon request. Please contact me directly at <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a> or through LinkedIn.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank" rel="noopener noreferrer">Renogade Farn</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank">linkedin.com/in/renogade-farn</a></p>
+  </section>
+
+  <section id="references">
+    <h2>References</h2>
+    <p>References available upon request.</p>
   </section>
 
   <footer>
-    <p>© 2025 Renogade Farn. All Rights Reserved.</p>
+    <p>© 2025 Renogade Farn. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

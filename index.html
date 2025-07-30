@@ -1,101 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Reno F. – Portfolio</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            color: #333;
             line-height: 1.6;
         }
+
         header {
             background-color: #2c3e50;
-            color: #fff;
-            padding: 20px 0;
+            color: white;
+            padding: 30px 0;
             text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
         main {
             max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background-color: white;
         }
+
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        h1, h2, h3 {
+
+        h2 {
             color: #2c3e50;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
         }
+
+        h3 {
+            margin-top: 20px;
+            color: #444;
+        }
+
+        em {
+            color: #777;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
         ul {
             padding-left: 20px;
         }
-        li {
+
+        ul li {
             margin-bottom: 10px;
         }
-        em {
-            color: #777;
-        }
+
         a {
             color: #3498db;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gif-container img {
+            width: 100%;
+            max-width: 280px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Reno F.</h1>
-    <p>Software Engineer | Gameplay Programmer | Web Developer</p>
-</header>
+    <header>
+        <h1>Reno F.</h1>
+        <p>Software Engineer • Gameplay Programmer • Web Developer</p>
+    </header>
 
-<main>
+    <main>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
+        <section id="intro">
+            <h2>Welcome</h2>
+            <p>Hello! I'm Reno, a software engineer and game developer passionate about building immersive experiences and full-stack web applications.</p>
+        </section>
 
-        <h3>Software Engineer | Inventure I.T.</h3>
-        <p><em>March 2025 – Present · Savannah, GA</em></p>
-        <ul>
-            <li>Designed and maintained client-facing applications using ASP.NET Core, Blazor, C#, and SQL, including a MAUI Blazor hybrid Point-of-Care app used in dermatology clinics generating $300K in annual revenue.</li>
-            <li>Implemented responsive user interfaces with HTML, CSS, and JavaScript, featuring search, sort, and pagination to enhance UX.</li>
-            <li>Created dynamic SSRS reports that cut billing review time by 50%, and reduced support calls by 30% through performance testing and SQL debugging.</li>
-            <li>Led Agile workflows and deployments using Azure DevOps, collaborating with internal and external stakeholders across business-critical systems.</li>
-        </ul>
+        <section id="experience">
+            <h2>Professional Experience</h2>
 
-        <h3>Gameplay Programmer | Tupelo Labs</h3>
-        <p><em>Jan 2024 – March 2025 · Savannah, GA</em></p>
-        <ul>
-            <li>Co-led gameplay development on <strong>Demon Wars: Commodore’s Command</strong>, a VR/MR tabletop strategy game built in Unity.</li>
-            <li>Developed core systems including Netcode for GameObjects, NavMesh-based AI, and VR interactions.</li>
-            <li>Implemented support for hand tracking and controller input for Meta Quest 2 & 3 platforms.</li>
-            <li>Supervised and mentored interns, assigned tasks, and managed sprints using Trello and internal documentation tools.</li>
-        </ul>
+            <h3>Software Engineer | Inventure I.T.</h3>
+            <p><em>March 2025 – Present · Savannah, GA</em></p>
+            <ul>
+                <li>Designed and maintained client-facing applications using ASP.NET Core, Blazor, C#, and SQL, including a MAUI Blazor hybrid Point-of-Care app used in dermatology clinics generating $300K in annual revenue.</li>
+                <li>Implemented responsive user interfaces with HTML, CSS, and JavaScript, featuring search, sort, and pagination to enhance UX.</li>
+                <li>Created dynamic SSRS reports that cut billing review time by 50%, and reduced support calls by 30% through performance testing and SQL debugging.</li>
+                <li>Led Agile workflows and deployments using Azure DevOps, collaborating with internal and external stakeholders across business-critical systems.</li>
+            </ul>
 
-        <h3>Software Engineer Intern | S.A.L.T. (Southern Automation Logistics & Technology)</h3>
-        <p><em>Jan 2023 – Dec 2023 · Statesboro, GA</em></p>
-        <ul>
-            <li>Created confirmation modals in CompleteMD software using HTML5, Bootstrap 4, and C# for safer ticket management.</li>
-            <li>Optimized SQL stored procedures to reduce duplicate lab data, and built SQL queries for debugging and on-call support.</li>
-            <li>Improved form usability by resolving backend bugs and implementing ASP.NET validation and search filters.</li>
-        </ul>
-    </section>
+            <h3>Gameplay Programmer | Tupelo Labs</h3>
+            <p><em>Jan 2024 – March 2025 · Savannah, GA</em></p>
+            <ul>
+                <li>Co-led gameplay development on <strong>Demon Wars: Commodore’s Command</strong>, a VR/MR tabletop strategy game built in Unity.</li>
+                <li>Developed core systems including Netcode for GameObjects, NavMesh-based AI, and VR interactions.</li>
+                <li>Implemented support for hand tracking and controller input for Meta Quest 2 & 3 platforms.</li>
+                <li>Supervised and mentored interns, assigned tasks, and managed sprints using Trello and internal documentation tools.</li>
+            </ul>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/your-profile/" target="_blank">linkedin.com/in/your-profile</a></p>
-    </section>
+            <h3>Software Engineer Intern | S.A.L.T. (Southern Automation Logistics & Technology)</h3>
+            <p><em>Jan 2023 – Dec 2023 · Statesboro, GA</em></p>
+            <ul>
+                <li>Created confirmation modals in CompleteMD software using HTML5, Bootstrap 4, and C# for safer ticket management.</li>
+                <li>Optimized SQL stored procedures to reduce duplicate lab data, and built SQL queries for debugging and on-call support.</li>
+                <li>Improved form usability by resolving backend bugs and implementing ASP.NET validation and search filters.</li>
+            </ul>
+        </section>
 
-</main>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <p>Here's a look at some of the games and applications I've developed:</p>
+            <div class="gif-container">
+                <img src="images/demonwars.gif" alt="Demon Wars gameplay" />
+                <img src="images/poc_app.gif" alt="Point-of-Care app demo" />
+                <img src="images/ar_planes.gif" alt="AR plane scanning demo" />
+            </div>
+        </section>
 
-</body>
-</html>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:reno@example.com">reno@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile/" target="_blank">linkedin.co_

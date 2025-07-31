@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Renogade Farn Portfolio</title>
   <style>
     :root {
-      --primary: #1abc9c;
-      --background: #121212;
-      --text: #f1f1f1;
-      --card-bg: #1e1e1e;
-      --highlight: #16a085;
+      --bg: #0f0f1b;
+      --text: #e4e4e4;
+      --highlight: #8c7ae6;
+      --card-bg: #1e1e2e;
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--background);
+      background-color: var(--bg);
       color: var(--text);
+      line-height: 1.6;
       animation: fadeSlideIn 1.2s ease-out both;
     }
 
@@ -37,19 +37,17 @@
       background-color: var(--card-bg);
       padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 0 10px var(--highlight);
+      box-shadow: 0 0 12px var(--highlight);
     }
 
-    h1 {
-      color: var(--primary);
+    header h1 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
 
-    h2 {
-      color: var(--highlight);
-      border-bottom: 2px solid var(--highlight);
-      padding-bottom: 5px;
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
     section {
@@ -61,21 +59,32 @@
       box-shadow: 0 0 24px var(--highlight);
     }
 
+    h2 {
+      color: var(--highlight);
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
     ul {
-      list-style: disc;
+      list-style-type: disc;
       padding-left: 20px;
+    }
+
+    .project, .experience {
+      margin-bottom: 30px;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: var(--card-bg);
-      color: var(--text);
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
 
     a {
-      color: var(--primary);
-      text-decoration: none;
+      color: #9ecbff;
     }
 
     a:hover {
@@ -83,60 +92,60 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Renogade Farn</h1>
-    <p>XR Developer | Web Developer | Software Engineer</p>
+    <p>Full-Stack Developer | XR Engineer | VR/AR Creator</p>
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <p>I am a passionate software developer with experience in building immersive VR/AR applications, modern web platforms, and full-stack systems. I thrive in fast-paced environments and love solving challenging problems.</p>
-  </section>
+    <h2>Professional Experience</h2>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Languages: C#, JavaScript, HTML, CSS, SQL</li>
-      <li>Frameworks: Unity3D, ASP.NET Core, Blazor, Node.js</li>
-      <li>Tools: Git, Azure DevOps, Trello, Blender, Vuforia, Meta Quest SDK</li>
-      <li>Database: SQL Server, Entity Framework</li>
-    </ul>
+    <div class="experience">
+      <h3>Software Developer Intern – CompleteMD</h3>
+      <ul>
+        <li>Developed and maintained a fully integrated medical website using ASP.NET Core and T-SQL.</li>
+        <li>Built responsive and interactive UI using Blazor, HTML, CSS, and JavaScript.</li>
+        <li>Led a small team of apprentices through Agile sprints, coordinating updates via Azure DevOps.</li>
+        <li>Collaborated with stakeholders to gather requirements and deliver production-level solutions.</li>
+      </ul>
+    </div>
+
+    <div class="experience">
+      <h3>Intern – InventureIT (Warner Robins AR Project)</h3>
+      <ul>
+        <li>Collaborated with an Air Force base to deliver an AR experience using Unity3D and Vuforia SDK.</li>
+        <li>Modeled, animated, and optimized aircraft in Blender for cross-platform deployment (Android, iOS, HoloLens 2).</li>
+      </ul>
+    </div>
   </section>
 
   <section>
     <h2>Projects</h2>
 
-    <h3>Demon Wars: Commodores Command</h3>
-    <ul>
-      <li>Developed a cross-platform VR/AR tabletop strategy game using Unity for the Meta Quest 2 and 3, combining immersive ship selection in VR with AR-based tactical board gameplay.</li>
-      <li>Implemented multiplayer functionality using Unity Netcode and designed navigable AI using NavMesh systems.</li>
-      <li>Leveraged the Meta Interaction SDK to enable intuitive hand-based controls and object manipulation.</li>
-      <li>Coordinated development tasks and milestone tracking using Trello in a collaborative, agile environment.</li>
-    </ul>
+    <div class="project">
+      <h3>Demon Wars: Commodores Command</h3>
+      <ul>
+        <li>Developed a cross-platform VR/AR tabletop strategy game using Unity for Meta Quest 2 and 3.</li>
+        <li>Implemented multiplayer using Unity Netcode and navigable AI via NavMesh systems.</li>
+        <li>Used Meta Interaction SDK for hand-tracking controls and object manipulation.</li>
+        <li>Organized development milestones and agile task tracking with Trello.</li>
+      </ul>
+    </div>
 
-    <h3>Warner Robins - Unity Augmented Reality Experience</h3>
-    <ul>
-      <li>Collaborated with an Air Force base to develop an AR experience using Unity3D and the Vuforia SDK, allowing users to scan real-world posters to spawn interactive aircraft models in augmented reality.</li>
-      <li>Created and animated 3D airplane models in Blender for use in the AR scenes, optimized for performance across devices.</li>
-      <li>Deployed the application on Android, iPhone, and HoloLens 2, ensuring cross-platform compatibility and a smooth user experience.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>References</h2>
-    <p>Available upon request.</p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:renogade@example.com">renogade@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/renogade" target="_blank">github.com/renogade</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/renogade" target="_blank">linkedin.com/in/renogade</a></p>
+    <div class="project">
+      <h3>Warner Robins – Unity Augmented Reality Experience</h3>
+      <ul>
+        <li>Built an AR poster-scanning system using Unity3D and Vuforia SDK for an Air Force collaboration.</li>
+        <li>Modeled and animated 3D planes in Blender for interactive AR presentation.</li>
+        <li>Deployed cross-platform builds to Android, iOS, and HoloLens 2.</li>
+      </ul>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Renogade Farn
+    &copy; 2025 Renogade Farn &mdash; Portfolio built with HTML, CSS, and clean code.
   </footer>
 </body>
 </html>

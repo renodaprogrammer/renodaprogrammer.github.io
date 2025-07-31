@@ -85,45 +85,10 @@
       margin-top: 0;
     }
 
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .gif-container {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 14px var(--highlight);
-      background: black;
-      cursor: pointer;
-    }
-
-    .gif-container img.static {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .gif-container img.animated {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      object-fit: cover;
-    }
-
-    .gif-container:hover img.static {
-      display: none;
-    }
-
-    .gif-container:hover img.animated {
-      display: block;
+    ul {
+      padding-left: 1.4rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
     .resume-btn {
@@ -144,12 +109,6 @@
       box-shadow: 0 0 18px #aaffff;
     }
 
-    ul {
-      padding-left: 1.4rem;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-
     footer {
       background: var(--bg-header);
       color: #bbb;
@@ -163,8 +122,6 @@
       nav { gap: 15px; }
       section { padding: 25px 20px; margin: 30px 10px; }
       h2 { font-size: 1.5rem; }
-      .projects { flex-direction: column; align-items: center; }
-      .gif-container { max-width: 90vw; }
     }
   </style>
 </head>
@@ -192,16 +149,17 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <div class="gif-container">
-        <img src="assets/gameplay1.png" alt="Gameplay Preview" class="static" />
-        <img src="assets/gameplay1.gif" alt="Gameplay Animation" class="animated" />
-      </div>
-      <div class="gif-container">
-        <img src="assets/gameplay1.png" alt="Gameplay Preview 2" class="static" />
-        <img src="assets/gameplay1.gif" alt="Gameplay Animation 2" class="animated" />
-      </div>
-    </div>
+    <ul>
+      <li>
+        <strong>Demon Wars: Commodore’s Command</strong> – VR/MR tabletop strategy game developed in Unity for Meta Quest 2 & 3. Implemented NavMesh AI, Netcode multiplayer, hand tracking, and controller support. Managed prototyping and team planning with Trello.
+      </li>
+      <li>
+        <strong>CompleteMD Platform</strong> – Full-stack medical web platform built with ASP.NET Core, Blazor, and SQL. Added confirmation dialogs, improved lab report efficiency, and resolved production bugs.
+      </li>
+      <li>
+        <strong>Point-of-Care Sales App</strong> – Designed a cross-platform MAUI Blazor hybrid app for sales reps. Integrated advanced UI, dynamic search/filter features, and SSRS reporting.
+      </li>
+    </ul>
   </section>
 
   <section id="skills">

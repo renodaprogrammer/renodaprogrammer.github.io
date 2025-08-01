@@ -5,256 +5,242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Renogade Farn Portfolio</title>
 <style>
-:root {
---highlight: #00e0ff;
---bg-dark: #050513;
---bg-mid: #0c0c2c;
---bg-header: #0a0a25;
---card-bg: rgba(0, 224, 255, 0.07);
---text-light: #d3f9ff;
---font-sci-fi: 'Orbitron', 'Audiowide', 'Segoe UI', sans-serif;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
-
-* {
-box-sizing: border-box;
-}
-
-body {
-margin: 0;
-font-family: var(--font-sci-fi);
-background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
-color: var(--text-light);
-animation: fadeSlideIn 1.2s ease-out both;
-}
-
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
+  :root {
+    --highlight: #00e0ff;
+    --bg-dark: #050513;
+    --bg-mid: #0c0c2c;
+    --bg-header: #0a0a25;
+    --card-bg: rgba(0, 224, 255, 0.07);
+    --text-light: #d3f9ff;
+    --font-sci-fi: 'Orbitron', 'Audiowide', 'Segoe UI', sans-serif;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
   }
-}
 
-header {
-background: var(--bg-header);
-color: var(--highlight);
-padding: 40px 20px;
-text-align: center;
-font-size: 2.8rem;
-letter-spacing: 0.1em;
-box-shadow: 0 4px 16px rgba(0,224,255,0.4);
-}
+  body {
+    margin: 0;
+    font-family: var(--font-sci-fi);
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+    color: var(--text-light);
+    animation: fadeSlideIn 1.2s ease-out both;
+  }
 
-header p {
-font-size: 1.3rem;
-color: var(--highlight);
-margin-top: 8px;
-}
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-nav {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 30px;
-background: #081818;
-padding: 15px;
-box-shadow: 0 4px 10px rgba(0,224,255,0.3);
-}
+  header {
+    background: var(--bg-header);
+    color: var(--highlight);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 16px rgba(0,224,255,0.4);
+  }
 
-nav a {
-color: var(--highlight);
-text-decoration: none;
-font-size: 1.1rem;
-font-weight: 600;
-letter-spacing: 0.05em;
-transition: color 0.3s ease;
-}
+  header p {
+    font-size: 1.3rem;
+    color: var(--highlight);
+    margin-top: 8px;
+  }
 
-nav a:hover {
-color: #aaffff;
-}
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #081818;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,224,255,0.3);
+  }
 
-section {
-background-color: var(--card-bg);
-margin: 40px auto;
-padding: 40px;
-max-width: 1000px;
-border-radius: 16px;
-box-shadow: 0 0 24px var(--highlight);
-}
+  nav a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
 
-h2 {
-color: var(--highlight);
-border-bottom: 2px solid var(--highlight);
-padding-bottom: 8px;
-font-size: 2rem;
-letter-spacing: 0.08em;
-margin-top: 0;
-}
+  nav a:hover {
+    color: #aaffff;
+  }
 
-.projects {
-display: flex;
-flex-wrap: wrap;
-gap: 30px;
-justify-content: center;
-}
+  section {
+    background-color: var(--card-bg);
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 0 24px var(--highlight);
+  }
 
-.gif-container {
-position: relative;
-width: 100%;
-max-width: 400px;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 0 14px var(--highlight);
-background: black;
-cursor: pointer;
-}
+  h2 {
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+    padding-bottom: 8px;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    margin-top: 0;
+  }
 
-.gif-container img.static {
-display: block;
-width: 100%;
-height: auto;
-}
+  .projects {
+    display: block;
+  }
 
-.gif-container img.animated {
-position: absolute;
-top: 0; left: 0;
-width: 100%;
-height: 100%;
-display: none;
-object-fit: cover;
-}
+  .project {
+    margin-bottom: 2rem;
+  }
 
-.gif-container:hover img.static {
-display: none;
-}
+  ul {
+    padding-left: 1.4rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
 
-.gif-container:hover img.animated {
-display: block;
-}
+  .resume-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 28px;
+    background: var(--highlight);
+    color: #000;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    box-shadow: 0 0 12px var(--highlight);
+  }
 
-.resume-btn {
-display: inline-block;
-margin-top: 10px;
-padding: 12px 28px;
-background: var(--highlight);
-color: #000;
-border-radius: 10px;
-font-weight: 700;
-text-decoration: none;
-letter-spacing: 0.08em;
-box-shadow: 0 0 12px var(--highlight);
-}
+  .resume-btn:hover {
+    background: #aaffff;
+    box-shadow: 0 0 18px #aaffff;
+  }
 
-.resume-btn:hover {
-background: #aaffff;
-box-shadow: 0 0 18px #aaffff;
-}
+  footer {
+    background: var(--bg-header);
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
 
-ul {
-padding-left: 1.4rem;
-line-height: 1.6;
-font-size: 1.1rem;
-}
-
-footer {
-background: var(--bg-header);
-color: #bbb;
-text-align: center;
-padding: 20px;
-font-size: 14px;
-letter-spacing: 0.05em;
-}
-
-@media (max-width: 700px) {
-nav { gap: 15px; }
-section { padding: 25px 20px; margin: 30px 10px; }
-h2 { font-size: 1.5rem; }
-.projects { flex-direction: column; align-items: center; }
-.gif-container { max-width: 90vw; }
-}
+  @media (max-width: 700px) {
+    nav { gap: 15px; }
+    section { padding: 25px 20px; margin: 30px 10px; }
+    h2 { font-size: 1.5rem; }
+  }
 </style>
 </head>
+
 <body>
 <header>
-Renogade Farn
-<p>Software Engineer · Game Developer</p>
+  Renogade Farn
+  <p>Software Engineer · Game Developer</p>
 </header>
+
 <nav>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-<a href="#references">References</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+  <a href="#references">References</a>
 </nav>
+
 <section id="about">
-<h2>About Me</h2>
-<p>I’m a software engineer and gameplay programmer specializing in .NET development and interactive 3D experiences with Unity and Unreal.</p>
-<a href="assets/resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">View Resume</a>
+  <h2>About Me</h2>
+  <p>I’m a software engineer and gameplay programmer specializing in .NET development and interactive 3D experiences with Unity and Unreal.</p>
+  <a href="assets/resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">View Resume</a>
 </section>
+
 <section id="projects">
-<h2>Projects</h2>
-<div class="projects">
-<div class="gif-container">
-<img src="assets/gameplay1.png" alt="Gameplay Preview" class="static" />
-<img src="assets/gameplay1.gif" alt="Gameplay Animation" class="animated" />
-</div>
-<div class="gif-container">
-<img src="assets/gameplay2.png" alt="Gameplay Preview 2" class="static" />
-<img src="assets/gameplay2.gif" alt="Gameplay Animation 2" class="animated" />
-</div>
-</div>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Demon Wars: Commodores Command</h3>
+      <ul>
+        <li>Developed a cross-platform VR/AR tabletop strategy game using Unity for the Meta Quest 2 and 3, combining immersive ship selection in VR with AR-based tactical board gameplay.</li>
+        <li>Implemented multiplayer functionality using Unity Netcode and designed navigable AI using NavMesh systems.</li>
+        <li>Leveraged the Meta Interaction SDK to enable intuitive hand-based controls and object manipulation.</li>
+        <li>Coordinated development tasks and milestone tracking using Trello in a collaborative, agile environment.</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Warner Robins – Unity Augmented Reality Experience</h3>
+      <ul>
+        <li>Collaborated with an Air Force base to develop an AR experience using Unity3D and the Vuforia SDK, allowing users to scan real-world posters to spawn interactive aircraft models in augmented reality.</li>
+        <li>Created and animated 3D airplane models in Blender for use in the AR scenes, optimized for performance across devices.</li>
+        <li>Deployed the application on Android, iPhone, and HoloLens 2, ensuring cross-platform compatibility and a smooth user experience.</li>
+      </ul>
+    </div>
+  </div>
 </section>
+
 <section id="skills">
-<h2>Skills</h2>
-<ul>
-<li><strong>Languages:</strong> C#, C++, Java, JavaScript, HTML, CSS, SQL, R</li>
-<li><strong>Tools & Frameworks:</strong> Unity, Unreal Engine, ASP.NET Core, Blazor, Azure DevOps, SSRS</li>
-<li><strong>Design:</strong> UI/UX, Game Design, Agile, VR/MR, 3D Pipelines</li>
-</ul>
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Languages:</strong> C#, C++, Java, JavaScript, HTML, CSS, SQL, R</li>
+    <li><strong>Tools & Frameworks:</strong> Unity, Unreal Engine, ASP.NET Core, Blazor, Azure DevOps, SSRS</li>
+    <li><strong>Design:</strong> UI/UX, Game Design, Agile, VR/MR, 3D Pipelines</li>
+  </ul>
 </section>
+
 <section id="experience">
-<h2>Professional Experience</h2>
-<h3>Software Engineer – Inventure I.T.</h3>
-<p><em>March 2025 – Present · Savannah, GA</em></p>
-<ul>
-<li>Developed full-stack applications using ASP.NET Core, Blazor, C#, and SQL, including a MAUI Blazor hybrid Point-of-Care app generating $300K+ annual revenue.</li>
-<li>Enhanced UI with responsive HTML, CSS, and JavaScript, implementing dynamic search, sort, and pagination.</li>
-<li>Created SSRS reports to automate billing workflows, cutting review time by 50% and reducing support calls by 30%.</li>
-<li>Managed Agile sprints and CI/CD using Azure DevOps across business-critical systems.</li>
-</ul>
-<h3>Gameplay Programmer – Tupelo Labs</h3>
-<p><em>Jan 2024 – March 2025 · Savannah, GA</em></p>
-<ul>
-<li>Led gameplay development on a VR tabletop strategy title using Unity, Netcode for GameObjects, and Meta Quest SDKs.</li>
-<li>Implemented NavMesh-based AI, hand tracking, and controller support for Meta Quest 2 & 3.</li>
-<li>Directed prototyping, sprint planning, and intern mentorship using Trello and Unity’s XR toolkit.</li>
-</ul>
-<h3>Software Engineer Intern – S.A.L.T.</h3>
-<p><em>Jan 2023 – Dec 2023 · Statesboro, GA</em></p>
-<ul>
-<li>Added ASP.NET confirmation dialogs for ticket deletion/restoration in CompleteMD software.</li>
-<li>Refined SQL stored procedures to remove data duplication in lab reports and reduce downtime.</li>
-<li>Resolved validation and email expiration bugs to stabilize production behavior.</li>
-</ul>
+  <h2>Professional Experience</h2>
+
+  <h3>Software Engineer – Inventure I.T.</h3>
+  <p><em>March 2025 – Present · Savannah, GA</em></p>
+  <ul>
+    <li>Developed full-stack applications using ASP.NET Core, Blazor, C#, and SQL, including a MAUI Blazor hybrid Point-of-Care app generating $300K+ annual revenue.</li>
+    <li>Enhanced UI with responsive HTML, CSS, and JavaScript, implementing dynamic search, sort, and pagination.</li>
+    <li>Created SSRS reports to automate billing workflows, cutting review time by 50% and reducing support calls by 30%.</li>
+    <li>Managed Agile sprints and CI/CD using Azure DevOps across business-critical systems.</li>
+  </ul>
+
+  <h3>Gameplay Programmer – Tupelo Labs</h3>
+  <p><em>Jan 2024 – March 2025 · Savannah, GA</em></p>
+  <ul>
+    <li>Led gameplay development on a VR tabletop strategy title using Unity, Netcode for GameObjects, and Meta Quest SDKs.</li>
+    <li>Implemented NavMesh-based AI, hand tracking, and controller support for Meta Quest 2 & 3.</li>
+    <li>Directed prototyping, sprint planning, and intern mentorship using Trello and Unity’s XR toolkit.</li>
+  </ul>
+
+  <h3>Software Engineer Intern – S.A.L.T.</h3>
+  <p><em>Jan 2023 – Dec 2023 · Statesboro, GA</em></p>
+  <ul>
+    <li>Added ASP.NET confirmation dialogs for ticket deletion/restoration in CompleteMD software.</li>
+    <li>Refined SQL stored procedures to remove data duplication in lab reports and reduce downtime.</li>
+    <li>Resolved validation and email expiration bugs to stabilize production behavior.</li>
+  </ul>
 </section>
+
 <section id="contact">
-<h2>Contact</h2>
-<p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank">linkedin.com/in/renogade-farn</a></p>
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:renofarn@gmail.com">renofarn@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/renogade-farn-0697782bb/" target="_blank" rel="noopener noreferrer">linkedin.com/in/renogade-farn</a></p>
 </section>
+
 <section id="references">
-<h2>References</h2>
-<p>References available upon request.</p>
+  <h2>References</h2>
+  <p>References available upon request.</p>
 </section>
+
 <footer>
-<p>© 2025 Renogade Farn. All rights reserved.</p>
+  <p>© 2025 Renogade Farn. All rights reserved.</p>
 </footer>
 </body>
 </html>

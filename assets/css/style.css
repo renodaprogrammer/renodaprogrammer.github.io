@@ -1,4 +1,136 @@
-﻿.project-grid {
+﻿/* ===========================
+   THEME VARIABLES & FONTS
+   =========================== */
+:root {
+  --highlight: #00e0ff;
+  --bg-dark: #050513;
+  --bg-mid: #0c0c2c;
+  --bg-header: #0a0a25;
+  --card-bg: rgba(0, 224, 255, 0.07);
+  --text-light: #d3f9ff;
+  --font-sci-fi: 'Orbitron', 'Audiowide', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
+body {
+  margin: 0;
+  font-family: var(--font-sci-fi);
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid));
+  color: var(--text-light);
+  animation: fadeSlideIn 1.2s ease-out both;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  background: var(--bg-header);
+  color: var(--highlight);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2.8rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(0,224,255,0.4);
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--highlight);
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: #081818;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,224,255,0.3);
+}
+
+nav a {
+  color: var(--highlight);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #aaffff;
+}
+
+section {
+  background-color: var(--card-bg);
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 1300px;
+  border-radius: 16px;
+  box-shadow: 0 0 24px var(--highlight);
+}
+
+h2 {
+  color: var(--highlight);
+  border-bottom: 2px solid var(--highlight);
+  padding-bottom: 8px;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.4rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 28px;
+  background: var(--highlight);
+  color: #000;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 12px var(--highlight);
+}
+
+.resume-btn:hover {
+  background: #aaffff;
+  box-shadow: 0 0 18px #aaffff;
+}
+
+footer {
+  background: var(--bg-header);
+  color: #bbb;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   PROJECT GRID & CARDS
+   =========================== */
+.project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
@@ -46,4 +178,13 @@
 .project-content ul {
   padding-left: 1.2rem;
   font-size: 0.95rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 700px) {
+  nav { gap: 15px; }
+  section { padding: 25px 20px; margin: 30px 10px; }
+  h2 { font-size: 1.5rem; }
 }

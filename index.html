@@ -43,7 +43,7 @@
       <!-- Project 1 -->
         <div class="project-card">
           <div class="project-video-container">
-            <video class="project-video" poster="assets/images/demonwars_still.jpg" muted loop playsinline>
+            <video class="project-video" muted loop playsinline preload="metadata">
               <source src="assets/videos/demonwars.mp4" type="video/mp4">
             </video>
           </div>
@@ -134,15 +134,19 @@
   </footer>
 
     <script>
-    document.querySelectorAll('.project-video').forEach(video => {
-      video.addEventListener('mouseenter', () => {
-        video.play();
-      });
-      video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0; // Reset to first frame
-      });
-    });
+        document.querySelectorAll('.project-video').forEach(video => {
+          // Make sure the first frame shows when page loads
+          video.pause();
+          video.currentTime = 0;
+
+          video.addEventListener('mouseenter', () => {
+            video.play();
+          });
+          video.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0; // Reset to first frame
+          });
+        });
   </script>
 </body>
 </html>

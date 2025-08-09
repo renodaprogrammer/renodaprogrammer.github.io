@@ -184,6 +184,21 @@ footer {
   font-size: 0.95rem;
 }
 
+.project-video-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.project-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ===========================
    RESPONSIVE
    =========================== */

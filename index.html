@@ -41,18 +41,22 @@
     <div class="project-grid">
 
       <!-- Project 1 -->
-      <div class="project-card">
-        <!-- <img src="assets/images/demonwars.jpg" alt="Demon Wars" class="project-image"> -->
-        <div class="project-content">
-          <h3>Demon Wars: Commodores Command</h3>
-          <span class="project-tags">Unity · VR/AR · Multiplayer</span>
-          <ul>
-            <li>Cross-platform VR/AR tabletop strategy game for Meta Quest 2 & 3.</li>
-            <li>Unity Netcode multiplayer & NavMesh AI.</li>
-            <li>Meta Interaction SDK for hand controls.</li>
-          </ul>
+        <div class="project-card">
+          <div class="project-video-container">
+            <video class="project-video" poster="assets/images/demonwars_still.jpg" muted loop playsinline>
+              <source src="assets/videos/demonwars.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-content">
+            <h3>Demon Wars: Commodores Command</h3>
+            <span class="project-tags">Unity · VR/AR · Multiplayer</span>
+            <ul>
+              <li>Cross-platform VR/AR tabletop strategy game for Meta Quest 2 & 3.</li>
+              <li>Unity Netcode multiplayer & NavMesh AI.</li>
+              <li>Meta Interaction SDK for hand controls.</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
       <!-- Project 2 -->
       <div class="project-card">
@@ -128,5 +132,17 @@
   <footer>
     <p>© 2025 Renogade Farn. All rights reserved.</p>
   </footer>
+
+    <script>
+    document.querySelectorAll('.project-video').forEach(video => {
+      video.addEventListener('mouseenter', () => {
+        video.play();
+      });
+      video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // Reset to first frame
+      });
+    });
+  </script>
 </body>
 </html>
